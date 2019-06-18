@@ -1,0 +1,46 @@
+<section id="myProducts" class="d-grid">
+    <div class="">
+      <div *ngIf="!products" class="">
+        <h1 class="">
+          <i class="fa fa-spinner fa-spin"></i>
+        </h1>
+      </div>
+      <h3 *ngIf="products && !products.length" class="">У вас немає продуктів</h3>
+      <div *ngIf="products && products.length" class="">
+        <div class="">
+          <h4 class="">Ваші товари</h4>
+          
+          <hr class="">
+          <div *ngFor="let product of products" class="product">
+            <div class="">
+              <div class="">
+                <a routerLink="/product/{{ product._id }}">
+                  <img src="{{ product.image }}" alt="image" class="img-fluid">
+                </a>
+              </div>
+              <div class="">
+                <h5>
+                  <a routerLink="/product/{{ product._id }}">{{ product.title }}</a>
+                  <p class="">
+                    <small class="">{{ product.category.name }}</small>
+                  </p>
+                </h5>
+              </div>
+              <div class="">
+                  <div class="">
+                      <div class="">
+                        <p>
+                          <small class="">Ціна</small>
+                        </p>
+                      </div>
+                    </div>
+                <h6 class="">{{ product.price | currency }}</h6>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

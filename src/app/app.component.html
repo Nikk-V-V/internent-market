@@ -1,0 +1,85 @@
+<header id="header">
+    <div class="comunication">
+      <ul>
+        <li><a [routerLink]="['aboutUs']" routerLinkActive="router-link-active" >Про нас</a></li>
+        <li><a [routerLink]="['#']" routerLinkActive="router-link-active">Гарантія</a></li>
+        <li><a [routerLink]="['#']" routerLinkActive="router-link-active">Доставка</a></li>
+        <div id="adminRoom" (click)="autorisationAdmin();" hidden>Адмінка</div>
+      </ul>
+    </div>
+    <nav class="header-nav">
+        <div (click)="showHiden();widthSid();" class="sidebar-show-and-hiden d-grid">
+          <div>Каталог</div>
+            <span role="button" >
+                 <i class="fas fa-bars"></i>
+            </span>
+        </div>
+        <a (click)="check()" id="logo" [routerLink]="['/home']" routerLinkActive="router-link-active"  >
+          <div class="logo">
+            <div class="imgLogo">
+                <img src="assets/img/img.png" alt="">
+            </div>
+            <div class="txtLogo">
+                <span class="txtLogo">
+                    ToWolf
+                  </span>  
+            </div>
+          </div>
+        </a>
+          <div id="search">
+            <div id="contS">
+              <input type="text" name="search" class="form-control" [(ngModel)]="searchTerm" (keyup.enter)="search()">
+              <span class="searchBtn" role="button" (click)="search()"> 
+                <i class="fas fa-search"> 
+                </i> 
+              </span>
+            </div>
+          </div>
+          <div class="menu">        
+              <li class="nav-item" ngbDropdown #dropdown="ngbDropdown">
+                  <a class="nav-link dropdown-toggle" ngbDropdownToggle>
+                    <i class="fa fa-user mr-1"></i>
+                    <span *ngIf="!token">Акаунт</span>
+                    <span *ngIf="data.user">{{ data.user.name }}</span>
+                  </a>
+                  <div ngbDropdownMenu class="dropdown-menu">
+                    <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();check();" 
+                    routerLink="/profile" class="dropdown-item">
+                      <i class="fa fa-user-circle" aria-hidden="true"></i> Профіль
+                    </a>
+                    <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();check();" 
+                    routerLink="/login" class="dropdown-item">
+                      <i class="fa fa-key" aria-hidden="true"></i> Увійти
+                    </a>
+                    <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();logout(); check();"
+                     class="dropdown-item">
+                      <i class="fa fa-key" aria-hidden="true"></i> Вийти
+                    </a>
+                    <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();check();" routerLink="/register" class="dropdown-item">
+                      <i class="fa fa-group" aria-hidden="true"></i> Реєстрація
+                    </a>
+                  </div>
+                </li>
+                <a (click)="collapse(); check()" routerLink="/cart" routerLinkActive="active" class="nav-link">
+                  <i class="fa fa-shopping-cart mr-1"></i>
+                  Корзина
+                  <span *ngIf="data.cartItems" class="badge badge-warning">{{ data.cartItems }}</span>
+                </a>
+          </div>
+    </nav>
+    <aside id="sidMenu">
+      <nav>
+          <app-categories></app-categories>
+      </nav>
+    </aside>
+    
+  </header>
+  
+  <router-outlet></router-outlet>
+
+  <div id="admin-login" hidden class="auterisation-container">
+    <div class="d-grid justify">
+      <app-admin-login></app-admin-login>
+    </div>
+  </div>
+

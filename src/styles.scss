@@ -1,0 +1,313 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: unset;
+    outline: none;
+  }
+html,body {
+  height: 100%;
+  background-color: #35313a;;
+  font-family: 'Roboto Regular', sans-serif;
+  color: aqua;
+  background-image: url('assets/img/Фон2.png');
+}
+.svg-img{
+  min-width: 280px;
+  color:black;
+}
+.cont-relative{
+  position: relative;
+}
+.st0{fill: #989bb1;stroke:#000000;stroke-miterlimit:10;}
+.st1{fill: #5d606f;stroke:#000000;stroke-miterlimit:10;}
+.st2{display:none;fill:none;stroke:#020202;}
+.st3{fill:none;stroke:#020202;}
+.st4{fill:#020202;}
+.st5{fill:rgb(250, 250, 250);stroke:#2E50BC;stroke-width:15;stroke-linejoin:round;stroke-miterlimit:10;}
+.st6{fill:none;}
+.st7{fill:#0E0049;}
+.st8{font-family:'Monotype Corsiva';}
+.st9{font-size:93px;}
+.st10{stroke:#0C0C0C;stroke-width:0.75;stroke-miterlimit:10;}
+.st11{fill:#FFFFFF;stroke:#0C0C0C;stroke-width:0.25;stroke-miterlimit:10;}
+.st12{stroke:#000000;stroke-miterlimit:10;}
+.st13{fill:none;stroke:#000000;stroke-miterlimit:10;}
+.st14{fill:none;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+.st15{stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+.st16{fill:#FFFFFF;stroke:#000000;stroke-width:0.75;stroke-miterlimit:10;}
+.st17{fill:#FFFFFF;}
+.st18{fill: #e6e7ea; stroke:#000000;stroke-miterlimit:10;}
+.st19{fill:#11C0EF;stroke:#000000;stroke-miterlimit:10;}
+.st20{fill:#5d606f;stroke:#000000;stroke-miterlimit:10;}
+.svg-img{
+  width: 280px;
+  height: 180px;
+  position: relative;
+}
+.rect{
+  position: absolute;
+  top: 57px;
+  right: 17px;
+  width: 162px;
+  border: 3px solid #2e50bc;
+  background-color: #ffffff;
+  p{
+      margin: 0;
+      font-family:'Monotype Corsiva';
+      padding: 5px;
+      font-weight: 500;
+  }
+}
+.d-grid{
+  display: grid;
+}
+.auto-fill {
+  grid-template-columns: repeat(auto-fill, 250px);
+}
+.justify{
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+.align{
+  align-content: center;
+  align-items: center;
+}
+.gap{
+  grid-gap: 20px;
+}
+section{
+  min-height: 100vh;
+}
+.review-des{
+    width: 95%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    resize: none;
+    border-radius: 10px;
+    background-color: #f0f2ff;
+    border: 1px solid #cbcccb;
+}
+
+.textAlignCenter{
+  text-align: center
+}
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+  color: #040000;
+}
+.full {
+  color: gold;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: gold;
+}
+
+.pagination{
+  justify-content: center;
+  align-content: center;
+}
+.input-form{
+    width: 96%;
+    padding: 13px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    box-shadow: grey 0 0 5px 1px;
+}
+.textBold{
+  font-weight: 600;
+  font-size: 18px;
+}
+.padding{
+  padding: 20px;
+}
+
+.list-product{
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+} 
+.product{
+  grid-gap: 1vw; 
+  display: grid;
+  justify-content: center;
+  margin-top: 10px;
+}
+.img{
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+}
+.img-cont{
+  height: 200px;
+  margin-top: 5px;
+  a{
+    margin: 0 auto;
+  }
+}
+.content-list{
+  grid-template-rows: 1fr 140px;
+  width: 220px;
+  grid-gap: 10px;
+  padding: 15px;
+  border: 3px solid #1800ff;
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  div{
+    a{
+      display: grid;
+    }
+  }
+}
+.text-container{
+  width: 197px;
+}
+.text-content{
+  grid-gap: 20px;
+}
+.product-name{
+  text-decoration: none;
+  color: #7000ff;
+  font-size: 0.8rem;
+}
+.product-name:hover {
+  color: #001e92;
+}
+.price{
+  color: #fb7401;
+}
+.row{
+  display: grid;
+  grid-template-rows: 20px 1px 1fr 60px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+form{
+  display: grid;
+  grid-gap: 20px;
+  background-color: #252229;
+  padding: 50px;
+
+  input:-webkit-autofill{
+      transition: background-color 5000s ease-in-out 0s;
+      background-image: none !important;
+      -webkit-text-fill-color: #93fff6;
+  }
+  p{
+      position: absolute;
+      top: 11px;
+      color: #93fff6;
+      left: 5px;
+      margin: 0px;
+  }
+  p,h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+  .reg-input{
+      padding: 10px 0px 0px 25px;
+      font-size: 18px;
+      background-color: #252229;
+      border: 1px;
+      border-bottom: 1px solid #026575;
+      outline: none;
+      color: #93fff6;
+  }
+  .reg-input:focus {
+    border-bottom: 1px solid  #FFFFFF;
+    
+  }
+  .reg-input::placeholder{
+      color: #93fff6;
+  }
+  .reg-input:auto{
+      background-color: #ffffff;
+      border: 1px;
+  }
+  .description{
+    overflow: auto;
+    resize: none;
+    width: 330px;
+    height: 150px;
+    background: #f6f6f6;
+    border: 1px solid #cecece;
+    border-radius: 10px;
+    padding: 8px 0 8px 10px; 
+}
+.select{
+  min-width: 10rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #35313a;
+  border: 1px solid rgb(0, 129, 255);
+  border-radius: .25rem;
+  color: aqua;
+}
+  button{
+      padding: 10px;
+      background: #004dff;
+      border: 1px;
+      color: #93fff6;
+  }
+}
+.containerForm{
+  position: relative;
+}
+
+button{
+  position: relative;
+  outline: none;
+}
+button:active{
+  top: 1px;
+  box-shadow: grey 0px 3px 5px 2px;
+  outline: none;
+}
+
+
+@media (max-width: 662px){
+  #main{
+    grid-template-columns: 300px;
+  }
+  .carousel{
+    width: 300px;
+  }
+}
+@media (max-width: 876px) and (min-width: 663px) {
+  #main{
+    grid-template-columns: 600px;
+  }
+  .carousel{
+    width: 600px;
+  }
+}
+@media (max-width: 1090px) and (min-width: 877px) {
+  #main{
+    grid-template-columns: 800px;
+  }
+  .carousel{
+    width: 800px;
+  }
+}
+@media (max-width: 1304px) and (min-width: 1091px) {
+  #main{
+    grid-template-columns: 980px;
+  }
+  .carousel{
+    width: 960px;
+  }
+}

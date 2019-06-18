@@ -1,0 +1,49 @@
+<section id="postProduct" class="d-grid justify">
+    <div class="content d-grid">
+      <div *ngIf="!categories" class="">
+        <h1 class="">
+          <i class="fa fa-spinner fa-spin"></i>
+        </h1>
+      </div>
+      <div *ngIf="categories" class="categ">
+        <div class="postProduct-container">
+          <form class="d-grid">
+            <div class="">
+              <label class="">Назва</label>
+              <input type="text" name="title" class="reg-input" [(ngModel)]="product.title">
+            </div>
+            <div class="">
+              <label class="">Ціна</label>
+              <input type="number" name="price" class="reg-input" [(ngModel)]="product.price">
+            </div>
+            <div class="d-grid justify">
+              <label>Вкажіть марку товару</label>
+              <select name="markId" [(ngModel)]="product.markId" class="select">
+                <option *ngFor="let mark of marks" [value]="mark._id">
+                  {{ mark.name }}
+                </option>
+              </select>
+            </div>
+            <div class="d-grid justify">
+              <label>Оберіть категорію</label>
+              <select name="categoryId" [(ngModel)]="product.categoryId" class="select">
+                <option *ngFor="let category of categories" [value]="category._id">
+                  {{ category.name }}
+                </option>
+              </select>
+            </div>
+            <div class="d-grid justify">
+              <label>Опис</label>
+              <textarea class="description" name="description" rows="5" [(ngModel)]="product.description"></textarea>
+            </div>
+            <div class="file-load-block">
+              <label>Картинка</label>
+              <input type="file" class="" accept="image/*" name="file" (change)="fileChange($event)">
+            </div>
+            <button type="button" class="d-grid justify" id="add-product" (click)="post()" [disabled]="btnDisabled">Виставити</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

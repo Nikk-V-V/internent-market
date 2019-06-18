@@ -1,0 +1,89 @@
+<section id="product" class="d-grid">
+  <div>
+    <div *ngIf="!product">
+      <h1 >
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <div *ngIf="product" id="container" class="d-grid">
+      <div class="d-grid product-container">
+        <div class="d-grid justify">
+          <img [src]="product.image" alt="productImage" class="">
+        </div>
+        <div>
+          <div>
+            <div>
+              <h4>{{ product.title }}</h4>
+              <p >
+                <small>Продавець: {{ product.owner.name }}</small>
+              </p>
+              <p >
+                <small >Категорія: {{ product.category.name }}</small>
+              </p>
+            </div>
+            <div >
+              <ngb-rating [(rate)]="product.averageRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+            </div>
+          </div>
+          <hr>
+          <p>{{ product.description }}</p>
+        </div>
+        <div class="d-grid justify">
+          <div id="price-cont" class="d-grid justify">
+            <div class="d-grid justify">
+              <h5 class="">Ціна: {{ product.price }} &#8372;</h5>
+              <a class="button-chart d-grid align" (click)="addToCart()">Додати в корзину</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="reviews-container d-grid gap">
+          <h4>Відгуки:</h4>
+          <div class="d-grid gap">
+            <div *ngFor="let review of product.reviews" class="back">
+              <div class="d-grid position gap"> 
+                <img [src]="review.owner.picture" alt="" width="75px" class="rounded-circle">
+                <div>
+                  <p class="">{{ review.owner.name }}</p>
+                  <ngb-rating [(rate)]="review.rating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                </div>
+                  <p>{{ review.title }}</p>
+                  <p>{{ review.description }}</p>
+              </div>
+            </div>
+            <div>
+              <div>
+                <h4>Залешіть свій відгук</h4>
+                <div class="d-grid gap">
+                  <div class="d-grid">
+                    <label class="label-text">Тема відгуку</label>
+                    <input type="text" name="title" class="input-form" [(ngModel)]="myReview.title">
+                  </div>
+                  <div class="d-grid">
+                    <label class="label-text">Ваша думка про товар</label>
+                    <textarea class="review-des" rows="5" name="description" [(ngModel)]="myReview.description"></textarea>
+                  </div>
+                  <label class="label-text">Рейтинг</label>
+                  <ngb-rating [(rate)]="myReview.rating" [starTemplate]="t" [readonly]="false" max="5"></ngb-rating>
+                  <button type="button" id="add-review" class="input-form justify d-grid" 
+                          (click)="postReview()" [disabled]="btnDisabled">
+                          Залишити відгук
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #t let-fill="fill">
+  <span *ngIf="fill === 100" class="star full">&#9733;</span>
+  <span *ngIf="fill === 0" class="star">&#9733;</span>
+  <span *ngIf="fill < 100 && fill > 0" class="star">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>

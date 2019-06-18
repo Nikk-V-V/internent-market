@@ -1,0 +1,35 @@
+#profile{
+    background: #35313a94;
+}
+.container-profile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    grid-template-rows: 2fr 2fr;
+}
+.user{
+    width: 200px;
+    grid-template-rows: 3fr;
+    text-decoration: none;
+    font-size: 20px;
+    color: #00c8fa;
+}
+.a-button{
+    border: 1px solid #2e50bc;
+    border-radius: 20px;
+    background-color: #002f71;
+    cursor: pointer;
+    grid-gap: 1vw; 
+    height: 40px;
+}
+.user-img{
+    justify-content: center;
+    display: grid;
+    align-items: center;
+    img{
+        width: 200px;
+    }
+}
+.st4 {
+    fill: #ffffff;
+}

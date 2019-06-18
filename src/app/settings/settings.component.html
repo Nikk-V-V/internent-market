@@ -1,0 +1,30 @@
+<section id='settings' class='d-grid justify'>
+  <div id="settings-conteiner" class="d-grid justify">
+    <div *ngIf='!currentSettings' class="">
+      <h1 class="">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <div *ngIf='currentSettings' class="form-container">
+      <form class="d-grid form">
+        <div class="containerForm">
+            <p><i class="fas fa-user"></i></p>
+          <input type="text" name="name" placeholder="Ім`я"  class="reg-input" [(ngModel)]="currentSettings.name">
+        </div>
+        <div class="containerForm">
+            <p><i class="fas fa-at"></i></p>
+            <input type="email" name="email" class="reg-input" placeholder="Email" [(ngModel)]="currentSettings.email">
+        </div>
+        <div class="containerForm">
+            <p><i class="fas fa-unlock-alt"></i></p>
+            <input type="password" name="newPass" class="reg-input" placeholder="Пароль" [(ngModel)]="currentSettings.newPass">
+        </div>
+        <div class="containerForm">
+            <p><i class="fas fa-lock"></i></p>
+            <input type="password" name="pasConfirm" class="reg-input" placeholder="Повторіть пароль" [(ngModel)]="currentSettings.pasConfirm">
+        </div>
+        <button type="button" class="" (click)="update()" [disabled]='btnDisabled'>Оновити</button>
+      </form>
+    </div>
+  </div>
+</section>

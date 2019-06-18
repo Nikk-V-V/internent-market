@@ -1,0 +1,22 @@
+.cont{ 
+    position: static;
+    display: grid;
+    justify-content: center;
+    h5{
+        width: 30px;
+    }
+}
+.categories-list{
+    display: grid;
+    justify-content: center;
+    grid-auto-rows: auto;
+    .category{
+        text-decoration: none;
+        color: powderblue;
+        font-size: 28px;
+        cursor: pointer;
+    }
+}
+
+
+

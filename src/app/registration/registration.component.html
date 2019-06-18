@@ -1,0 +1,26 @@
+<section id="registration">
+    <form>
+      <div class="containerForm">
+        <p><i class="fas fa-user"></i></p>
+        <input class="reg-input" type="text" name="name" placeholder="Ім`я"  [(ngModel)]="name">
+      </div>
+      <div class="containerForm">
+        <p><i class="fas fa-at"></i></p>
+        <input class="reg-input" type="email" name="email" placeholder='Email' [(ngModel)]="email">
+      </div>
+      <div class="containerForm">
+        <p><i class="fas fa-unlock-alt"></i></p>
+        <input class="reg-input" type="password" name="password" placeholder='Пароль' [(ngModel)]="password">
+      </div>
+     <div class="containerForm">
+        <p><i class="fas fa-lock"></i></p>
+        <input class="reg-input" type="password" name="password1" placeholder='Повторіть пароль' [(ngModel)]="password1">
+      </div>
+      <div>
+        <label>Продавець?</label>
+        <input type="checkbox" name="isSeller" [(ngModel)]="isSeller">
+      </div>
+    
+      <button type="button" (click)="register()" [disabled]='btnDisabled'>Зареєструватись</button>
+    </form>
+</section>

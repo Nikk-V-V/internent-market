@@ -1,0 +1,74 @@
+<section id="main" class="gap">
+  <div id="main-content" class="padding">
+    <div class="carousel">
+      <div class="slider">
+          <span class="carousel-item-left" role="button"  (click)='left()'>
+              <i class="fas fa-angle-left"></i>
+        </span>
+        <div class="content-slider d-grid" id="content">
+          <div class="slid" *ngFor="let slider of currentSlids">
+              <div id="carouselItem">
+                  <img src="{{slider.slid}}" alt="Slide">
+              </div>
+            </div>
+        </div>
+        <span class="carousel-item-right" role="button" (click)='right()'>
+            <i class="fas fa-angle-right"></i>
+        </span>
+      </div> 
+    </div>
+  </div>
+  <div class="d-grid cont-relative">
+    <h4 class="d-grid justify textBold back" >Нові товари</h4>
+    <i (click)="showHidenList1();widthSid();" id="arrButtonNewProduct" class="fas fa-arrow-circle-down"></i>
+    <div id="newProduct" class="list-product d-grid items">
+      <div  class="product" *ngFor="let product of newProducts">
+        <div class="content-list d-grid justify">
+          <div class="img-cont d-flex">
+            <a routerLink="/product/{{ product._id }}">
+              <img [src]="product.image" alt="productImage" class="img">
+            </a>
+          </div>
+          <div class="text-container">
+            <div class="d-grid">
+              <div class="text-content d-grid align">
+                <h5 class="d-grid justify">
+                  <a class="product-name" routerLink="/product/{{ product._id }}">{{ product.title }}</a>
+                </h5>
+                <p class="d-grid justify price">{{ product.price}} &#8372;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="condition"  class="d-grid cont-relative">
+      <h4 class="d-grid justify textBold back" >Недавно переглянуті товари</h4>
+      <i (click)="showHidenList2();widthSid();" id="arrButton" class="fas fa-arrow-circle-down"></i>
+      <div id="revisedItems" class="list-product d-grid items">
+        <div  class="product" *ngFor="let item of revisedItems">
+          <div class="content-list d-grid justify">
+            <div class="img-cont d-flex">
+              <a routerLink="/product/{{ item._id }}">
+                <img [src]="item.image" alt="productImage" class="img">
+              </a>
+            </div>
+            <div class="text-container">
+              <div class="d-grid">
+                <div class="text-content d-grid align">
+                  <h5 class="d-grid justify">
+                    <a class="product-name" routerLink="/product/{{ item._id }}">{{ item.title }}</a>
+                  </h5>
+                  <p class="d-grid justify price">{{ item.price}} &#8372;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+  </div>
+</section>
+

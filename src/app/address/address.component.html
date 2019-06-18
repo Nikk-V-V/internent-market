@@ -1,0 +1,45 @@
+<section id="address" class="d-grid justify">
+    <div class="">
+      <h4>Вкажіть вашу адресу</h4>
+      <hr>
+      <div *ngIf="!currentAddress" class="">
+        <h1 class="">
+          <i class="fa fa-spinner fa-spin"></i>
+        </h1>
+      </div>
+      <div *ngIf="currentAddress" class="form-container">
+        <div class="">
+          <form>
+            <div class="d-grid">
+              <label>Адреса</label>
+              <input type="text" name="address1" class="reg-input" placeholder="Адреса" [(ngModel)]="currentAddress.addr1">
+            </div>
+            <div class="d-grid">
+              <div class="d-grid">
+                <label>Місто</label>
+                <input type="text" name="city" class="reg-input" placeholder="Місто" [(ngModel)]="currentAddress.city">
+              </div>
+              <div class="d-grid">
+                <div class="d-grid">
+                  <label>Область</label>
+                  <input type="text" name="state" class="reg-input" placeholder="Область" [(ngModel)]="currentAddress.state">
+                </div>
+              </div>
+              <div class="d-grid">
+                <div class="d-grid">
+                  <label>Відділ нової пошти</label>
+                  <input type="text" name="postalCode" class="reg-input" placeholder="Відділ нової пошти" [(ngModel)]="currentAddress.postalCode">
+                </div>
+              </div>
+            </div>
+            <div class="d-grid">
+              <label>Країна</label>
+              <input type="text" name="country" class="reg-input" placeholder="" [(ngModel)]="currentAddress.country">
+            </div>
+            <button type="button" class="" (click)="updateAddress()" [disabled]="btnDisabled">Змінити адресу</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

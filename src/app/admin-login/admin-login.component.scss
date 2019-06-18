@@ -1,0 +1,13 @@
+#login-cont{
+    width: 283px;
+}
+
+form{
+    grid-template-columns: 231px;
+    padding: 25px;
+    input:-webkit-autofill{
+        transition: background-color 5000s ease-in-out 0s;
+        background-image: none !important;
+        -webkit-text-fill-color: #93fff6;
+    }
+}
